@@ -25,15 +25,13 @@ public class Sender implements Runnable {
             String name = br.readLine();
             System.out.println("Enter your message or type exit for quit");
             String messageText = br.readLine();
-            Message message = new Message(name, messageText);
             while (true) {
-                oos.writeObject(message.toString());
+                Message message = new Message(name, messageText);
+                oos.writeObject(message);
                 if ("exit".equalsIgnoreCase(messageText)) {
                     break;
                 }
                 messageText = br.readLine();
-                message.setMessage(messageText);
-                message.setTime(LocalTime.now());
             }
         } catch (IOException e) {
             e.printStackTrace();

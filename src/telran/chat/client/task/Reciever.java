@@ -18,7 +18,7 @@ public class Reciever implements Runnable {
         try (Socket socket = this.socket) {
             ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
             while (true) {
-                String message = ois.readObject().toString();
+                Message message = (Message) ois.readObject();
                 System.out.println(message);
             }
         } catch (IOException | ClassNotFoundException e) {

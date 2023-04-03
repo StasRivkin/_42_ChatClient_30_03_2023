@@ -15,26 +15,6 @@ public class Message implements Serializable {
         this.message = message;
     }
 
-    public String getNickName() {
-        return nickName;
-    }
-
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
-
     @Override
     public String toString() {
         return nickName + " [" + time + "] : " + message;
